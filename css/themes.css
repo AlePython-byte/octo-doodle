@@ -1,0 +1,91 @@
+/* ═══════════════════════════════════════════════════════
+   SISTEMA DE TEMAS — Trío Magia Blanca de Colombia
+   Variables CSS para modo oscuro y claro
+═══════════════════════════════════════════════════════ */
+
+/* ── Modo oscuro (predeterminado) ── */
+:root,
+[data-theme="dark"] {
+  /* Fondos */
+  --bg-primary:       #0a0806;
+  --bg-secondary:     #130e08;
+  --bg-tertiary:      #1f1510;
+
+  /* Texto */
+  --text-primary:     #F5EDD6;
+  --text-secondary:   rgba(245, 237, 214, 0.65);
+  --text-muted:       rgba(245, 237, 214, 0.32);
+
+  /* Acento ámbar */
+  --accent:           #C8873A;
+  --accent-hover:     #d99a4f;
+  --accent-subtle:    rgba(200, 135, 58, 0.12);
+  --accent-border:    rgba(200, 135, 58, 0.22);
+
+  /* Navbar */
+  --nav-text:         #F5EDD6;
+  --nav-bg-solid:     rgba(10, 8, 6, 0.88);
+
+  /* Hero */
+  --hero-gradient: linear-gradient(
+    180deg,
+    rgba(10, 8, 6, 0.25) 0%,
+    rgba(10, 8, 6, 0.08) 35%,
+    rgba(10, 8, 6, 0.55) 75%,
+    rgba(10, 8, 6, 0.97) 100%
+  );
+
+  /* Decorativos */
+  --line-color:       rgba(200, 135, 58, 0.5);
+  --noise-opacity:    0.045;
+  --particle-color:   rgba(200, 135, 58, 0.55);
+  --card-bg:          rgba(255, 255, 255, 0.03);
+}
+
+/* ── Modo claro ── */
+[data-theme="light"] {
+  /* Fondos */
+  --bg-primary:       #FAF3E8;
+  --bg-secondary:     #f0e8d5;
+  --bg-tertiary:      #e8ddc5;
+
+  /* Texto */
+  --text-primary:     #2a1a08;
+  --text-secondary:   rgba(42, 26, 8, 0.65);
+  --text-muted:       rgba(42, 26, 8, 0.35);
+
+  /* Acento ámbar */
+  --accent:           #b87528;
+  --accent-hover:     #9e6320;
+  --accent-subtle:    rgba(184, 117, 40, 0.1);
+  --accent-border:    rgba(139, 69, 19, 0.22);
+
+  /* Navbar */
+  --nav-text:         #2a1a08;
+  --nav-bg-solid:     rgba(250, 243, 232, 0.92);
+
+  /* Hero */
+  --hero-gradient: linear-gradient(
+    180deg,
+    rgba(30, 15, 5, 0.18) 0%,
+    rgba(30, 15, 5, 0.04) 35%,
+    rgba(30, 15, 5, 0.45) 75%,
+    rgba(250, 243, 232, 0.97) 100%
+  );
+
+  /* Decorativos */
+  --line-color:       rgba(139, 69, 19, 0.45);
+  --noise-opacity:    0.03;
+  --particle-color:   rgba(139, 69, 19, 0.4);
+  --card-bg:          rgba(0, 0, 0, 0.03);
+}
+
+/* ── Transición suave al cambiar tema ──
+   Solo propiedades de color para no interferir con animaciones de scroll */
+*, *::before, *::after {
+  transition:
+    background-color 0.4s ease,
+    color            0.4s ease,
+    border-color     0.4s ease,
+    box-shadow       0.4s ease;
+}

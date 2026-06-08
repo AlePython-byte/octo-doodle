@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trío Magia Blanca de Colombia — Boleros y música latinoamericana desde 1992, Túquerres, Nariño." />
+  <meta name="theme-color" content="#0a0806" />
+
+  <!-- Open Graph — compartir en redes sociales -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Trío Magia Blanca de Colombia" />
+  <meta property="og:description" content="Boleros y música latina desde 1992. Fundado en Túquerres, Nariño. Disponibles para serenatas, bodas y eventos en Colombia." />
+  <meta property="og:image"       content="assets/images/og-cover.jpg" />
+  <!-- IMAGEN OG: reemplazar assets/images/og-cover.jpg con foto real del trío (1200×630 px recomendado) -->
+  <meta name="twitter:card"       content="summary_large_image" />
+  <title>Trío Magia Blanca de Colombia</title>
+
+  <!-- Google Fonts: Playfair Display + Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/themes.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- Textura de grano sobre toda la página -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Contenedor de partículas flotantes (notas musicales) -->
+  <div class="particles-container" id="particles" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Navegación principal">
+
+      <!-- Logotipo -->
+      <a href="#inicio" class="nav-logo" aria-label="Trío Magia Blanca — Inicio">
+        <span class="logo-main">Trío Magia Blanca</span>
+        <span class="logo-sub">de Colombia</span>
+      </a>
+
+      <!-- Links de navegación -->
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#inicio"      class="nav-link active">
+            <span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+        <li><a href="#historia"    class="nav-link">
+            <span class="lang-es">Historia</span><span class="lang-en">History</span></a></li>
+        <li><a href="#integrantes" class="nav-link">
+            <span class="lang-es">Integrantes</span><span class="lang-en">Members</span></a></li>
+        <li><a href="#trayectoria" class="nav-link">
+            <span class="lang-es">Trayectoria</span><span class="lang-en">Journey</span></a></li>
+        <li><a href="#discografia" class="nav-link">
+            <span class="lang-es">Discografía</span><span class="lang-en">Discography</span></a></li>
+        <li><a href="#videos"      class="nav-link">Videos</a></li>
+        <li><a href="#contacto"    class="nav-link">
+            <span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a></li>
+      </ul>
+
+      <!-- Controles: idioma · tema · hamburguesa -->
+      <div class="nav-controls">
+
+        <!-- Toggle de idioma (solo visual) -->
+        <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma / Change language">
+          <span class="lang-btn active" data-lang="es">ES</span>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <span class="lang-btn" data-lang="en">EN</span>
+        </button>
+
+        <!-- Toggle modo claro / oscuro -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar modo de color">
+          <span class="theme-icon theme-icon--moon" aria-hidden="true">☾</span>
+          <span class="theme-icon theme-icon--sun"  aria-hidden="true">☀</span>
+        </button>
+
+        <!-- Botón hamburguesa (solo mobile) -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       HERO — 100vh
+  ═══════════════════════════════════════════ -->
+  <section
+    id="inicio"
+    class="hero"
+    aria-label="Bienvenida al Trío Magia Blanca de Colombia"
+  >
+
+    <!-- Fondo con parallax (se mueve con JS) -->
+    <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+
+    <!-- Overlay con degradado del sistema de temas -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Contenido central (fade-out en scroll) -->
+    <div class="hero-content" id="hero-content">
+
+      <p class="hero-eyebrow animate-in" style="--delay: 0.3s">
+        DESDE 1992 &middot; TÚQUERRES, NARIÑO
+      </p>
+
+      <h1 class="hero-title animate-in" style="--delay: 0.65s">
+        TRÍO MAGIA<br>BLANCA
+      </h1>
+
+      <p class="hero-subtitle animate-in" style="--delay: 1s">
+        DE COLOMBIA
+      </p>
+
+      <div class="hero-line animate-in" style="--delay: 1.2s" role="separator" aria-hidden="true"></div>
+
+      <p class="hero-tagline animate-in" style="--delay: 1.4s">
+        <span class="lang-es">Boleros y música latina que enamoran</span>
+        <span class="lang-en">Boleros and latin music that captivate</span>
+      </p>
+
+      <a
+        href="#contacto"
+        class="hero-cta animate-in"
+        style="--delay: 1.65s"
+      >
+        <span class="lang-es">Contáctanos</span>
+        <span class="lang-en">Contact Us</span>
+      </a>
+
+    </div><!-- /hero-content -->
+
+    <!-- Indicador de scroll animado -->
+    <div
+      class="scroll-indicator animate-in"
+      id="scroll-indicator"
+      style="--delay: 2.1s"
+      aria-hidden="true"
+    >
+      <div class="scroll-mouse">
+        <span class="scroll-dot"></span>
+      </div>
+      <span class="scroll-label">
+        <span class="lang-es">Descubre</span>
+        <span class="lang-en">Discover</span>
+      </span>
+    </div>
+
+  </section><!-- /hero -->
+
+  <!-- ═══════════════════════════════════════════
+       SECCIONES FUTURAS (placeholders con IDs correctos)
+  ═══════════════════════════════════════════ -->
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN HISTORIA
+  ═══════════════════════════════════════════ -->
+  <section id="historia" class="historia" aria-labelledby="historia-titulo">
+
+    <!-- Encabezado -->
+    <div class="section-header fade-in-up">
+      <p class="section-eyebrow">
+        <span class="lang-es">NUESTRA HISTORIA</span>
+        <span class="lang-en">OUR HISTORY</span>
+      </p>
+      <h2 id="historia-titulo" class="section-title">
+        <span class="lang-es">33 Años de Música y Pasión</span>
+        <span class="lang-en">33 Years of Music and Passion</span>
+      </h2>
+      <div class="section-line" aria-hidden="true"></div>
+      <p class="section-intro">
+        <span class="lang-es">
+          El Trío Magia Blanca fue fundado el <strong>22 de abril de 1992</strong> en
+          Túquerres, Nariño, por <strong>Jorge Edgar Benavides Ortega</strong>. El nombre
+          <em>«Magia Blanca»</em> es originario de Europa y significa el desarrollo del
+          espíritu en su totalidad: una magia buena asociada a lo espiritual, la bondad
+          y la mística en busca de la superación del ser humano.
+        </span>
+        <span class="lang-en">
+          The Trío Magia Blanca was founded on <strong>April 22, 1992</strong> in
+          Túquerres, Nariño, by <strong>Jorge Edgar Benavides Ortega</strong>. The name
+          <em>"Magia Blanca"</em> originates from Europe and symbolizes the full
+          development of the spirit — a benevolent magic associated with spirituality,
+          goodness, and mysticism in the pursuit of human transcendence.
+        </span>
+      </p>
+    </div>
+
+    <!-- Timeline cronológico -->
+    <ol class="timeline" aria-label="Cronología del Trío Magia Blanca">
+
+      <!-- 1992 — 1.º → izquierda -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="1992">1992</time>
+            <ul class="timeline-events">
+              <li>Fundación del trío en Túquerres, Nariño.</li>
+              <li>Primer puesto, Festival Homenaje al poeta Aníbal Micolta Rubio.</li>
+              <li>Reconocimiento de la Revista Cultural <em>Correo del Sur</em> como el Trío más destacado del Sur Colombiano.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+      </li>
+
+      <!-- 1993 — 2.º → derecha -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="1993">1993</time>
+            <ul class="timeline-events">
+              <li>Grabación Volumen I <em>«Iré muy lejos»</em> — Discos Victoria, Medellín.</li>
+              <li>2.º puesto, IX Encuentro Nacional de Tríos, Banco del Estado, Popayán.</li>
+            </ul>
+          </article>
+        </div>
+      </li>
+
+      <!-- 1994 — 3.º → izquierda -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="1994">1994</time>
+            <ul class="timeline-events">
+              <li><em>«Embajadores de la Música Colombiana»</em> en el programa Jorge Barón TV, Bogotá.</li>
+              <li>Grabación Volumen II <em>«Amor Prohibido»</em> — Discos Fuentes, Medellín.</li>
+              <li>Encuentro de los Mejores Tríos del Mundo, Pasto.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+      </li>
+
+      <!-- 1995 — 4.º → derecha -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="1995">1995</time>
+            <ul class="timeline-events">
+              <li>III Festival Nacional de los Mejores Tríos de Colombia, Cali.</li>
+            </ul>
+          </article>
+        </div>
+      </li>
+
+      <!-- 1997 — 5.º → izquierda -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="1997">1997</time>
+            <ul class="timeline-events">
+              <li>Homenaje a la Señorita Colombia y Reinas de Belleza, Ipiales.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+      </li>
+
+      <!-- 2001 — 6.º → derecha -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="2001">2001</time>
+            <ul class="timeline-events">
+              <li>Gira musical por Villa de Leyva (Boyacá) y Zipaquirá (Cundinamarca).</li>
+            </ul>
+          </article>
+        </div>
+      </li>
+
+      <!-- 2002 — 7.º → izquierda -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="2002">2002</time>
+            <ul class="timeline-events">
+              <li>XV Encuentro de los Mejores Tríos de Nariño, Pasto.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+      </li>
+
+      <!-- 2004 — 8.º → derecha -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="2004">2004</time>
+            <ul class="timeline-events">
+              <li>IX Festival Nacional del Cuy, Cali.</li>
+              <li>Encuentro Internacional de Tríos, Tulcán, Ecuador.</li>
+            </ul>
+          </article>
+        </div>
+      </li>
+
+      <!-- 2005 — 9.º → izquierda -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="2005">2005</time>
+            <ul class="timeline-events">
+              <li>Programa televisivo <em>«Serenata Teleantioquia»</em>, Medellín.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+      </li>
+
+      <!-- 2011 — 10.º → derecha -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="2011">2011</time>
+            <ul class="timeline-events">
+              <li>Regreso a <em>Teleantioquia</em>, Rionegro, Antioquia.</li>
+            </ul>
+          </article>
+        </div>
+      </li>
+
+      <!-- 2012 — 11.º → izquierda -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="2012">2012</time>
+            <ul class="timeline-events">
+              <li>Conmemoración del Centenario de Puerto Asís, Putumayo.</li>
+              <li>Encuentro de la Jurisdicción Contencioso Administrativa, Neiva — serenata ofrecida a Magistrados del Consejo de Estado.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+      </li>
+
+      <!-- 2017 — 12.º → derecha -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="2017">2017</time>
+            <ul class="timeline-events">
+              <li>Reconocimiento artístico del Honorable Concejo Municipal de Pasto, Proposición N.º 090.</li>
+            </ul>
+          </article>
+        </div>
+      </li>
+
+      <!-- 2018 — 13.º → izquierda -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="2018">2018</time>
+            <ul class="timeline-events">
+              <li>Grabación CD Álbum Volumen 8 <em>«Canción del alma»</em>.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+      </li>
+
+      <!-- 2022 — 14.º → derecha -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot"></span></div>
+        <div class="timeline-side">
+          <article class="timeline-card">
+            <time class="timeline-year" datetime="2022">2022</time>
+            <ul class="timeline-events">
+              <li>Participación en el XV Festival Internacional Ipiales Cuna de Grandes Tríos.</li>
+            </ul>
+          </article>
+        </div>
+      </li>
+
+      <!-- 2024 — 15.º → izquierda (el más reciente, destacado) -->
+      <li class="timeline-item fade-in-up">
+        <div class="timeline-side">
+          <article class="timeline-card timeline-card--featured">
+            <time class="timeline-year" datetime="2024">2024</time>
+            <ul class="timeline-events">
+              <li>Lanzamiento del CD <em>«Trío Magia Blanca de los buenos amigos»</em> con temas inéditos <em>«Profundo Amor»</em> y <em>«Homenaje»</em>.</li>
+              <li>Festival Internacional de Tríos Onomástico de Túquerres.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="timeline-center" aria-hidden="true"><span class="timeline-dot timeline-dot--featured"></span></div>
+        <div class="timeline-side timeline-side--empty" aria-hidden="true"></div>
+      </li>
+
+    </ol><!-- /timeline -->
+  </section><!-- /historia -->
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN INTEGRANTES
+  ═══════════════════════════════════════════ -->
+  <section id="integrantes" class="integrantes" aria-labelledby="integrantes-titulo">
+
+    <!-- Encabezado -->
+    <div class="section-header fade-in-up">
+      <p class="section-eyebrow">
+        <span class="lang-es">QUIÉNES SOMOS</span>
+        <span class="lang-en">WHO WE ARE</span>
+      </p>
+      <h2 id="integrantes-titulo" class="section-title">
+        <span class="lang-es">Los Artistas</span>
+        <span class="lang-en">The Artists</span>
+      </h2>
+      <div class="section-line" aria-hidden="true"></div>
+      <p class="section-intro">
+        <span class="lang-es">Tres voces, un alma. Desde Nariño para el mundo.</span>
+        <span class="lang-en">Three voices, one soul. From Nariño to the world.</span>
+      </p>
+    </div>
+
+    <!-- Separador musical decorativo -->
+    <div class="music-divider" aria-hidden="true">
+      <span class="music-divider__line"></span>
+      <span class="music-divider__icon">♪</span>
+      <span class="music-divider__line"></span>
+    </div>
+
+    <!-- Lista de integrantes -->
+    <ul
+      class="members-list"
+      role="list"
+      aria-label="Integrantes del Trío Magia Blanca de Colombia"
+    >
+
+      <!-- ── 1: Jorge Edgar Benavides Ortega ── -->
+      <li class="member-item fade-in-up" style="--card-delay: 0ms">
+        <article class="member-card">
+
+          <figure class="member-photo member-photo--jorge">
+            <img
+              src="assets/images/jorge-benavides.jpg"
+              alt="Jorge Edgar Benavides Ortega — Trío Magia Blanca de Colombia"
+              class="member-photo-img"
+              loading="lazy"
+            >
+            <div class="member-photo__overlay" aria-hidden="true"></div>
+            <span class="member-voice-number" aria-hidden="true">1ª</span>
+          </figure>
+
+          <div class="member-info">
+            <h3 class="member-name">Jorge Edgar Benavides Ortega</h3>
+            <p class="member-role">
+              <span class="lang-es">1ª Voz &amp; Percusión · Fundador</span>
+              <span class="lang-en">1st Voice &amp; Percussion · Founder</span>
+            </p>
+            <p class="member-bio">
+              <span class="lang-es">
+                Fundador del trío el <strong>22 de abril de 1992</strong>. Nacido el
+                5 de marzo de 1951 en Túquerres, Nariño. Abogado, licenciado en
+                Filosofía y Teología, músico desde los 7 años. Fundador también del
+                <em>Trío Amistad</em> (1974) y del <em>Coro Cantares del Azufral</em>.
+              </span>
+              <span class="lang-en">
+                Founder of the trio on <strong>April 22, 1992</strong>. Born on
+                March 5, 1951 in Túquerres, Nariño. Lawyer, graduate in Philosophy
+                and Theology, musician since age 7. Also founder of the
+                <em>Trío Amistad</em> (1974) and the <em>Coro Cantares del Azufral</em>.
+              </span>
+            </p>
+          </div>
+
+        </article>
+      </li>
+
+      <!-- ── 2: Wilson Estrada Pinchao ── -->
+      <li class="member-item fade-in-up" style="--card-delay: 200ms">
+        <article class="member-card">
+
+          <!-- FOTO: cuando llegue la imagen, reemplazar .member-photo-bg por:
+               <img src="assets/images/wilson-estrada.jpg"
+                    alt="Wilson Estrada Pinchao"
+                    class="member-photo-img">
+               y quitar role="img" + aria-label del <figure> -->
+          <figure
+            class="member-photo member-photo--wilson"
+            role="img"
+            aria-label="Fotografía de Wilson Estrada Pinchao, segunda voz y guitarra armonizante"
+          >
+            <div class="member-photo-bg" aria-hidden="true"></div>
+            <div class="member-photo__overlay" aria-hidden="true"></div>
+            <span class="member-voice-number" aria-hidden="true">2ª</span>
+          </figure>
+
+          <div class="member-info">
+            <h3 class="member-name">Wilson Estrada Pinchao</h3>
+            <p class="member-role">
+              <span class="lang-es">2ª Voz &amp; Guitarra Armonizante</span>
+              <span class="lang-en">2nd Voice &amp; Harmony Guitar</span>
+            </p>
+            <p class="member-bio member-bio--pending">
+              <em>
+                <span class="lang-es">Biografía próximamente…</span>
+                <span class="lang-en">Biography coming soon…</span>
+              </em>
+            </p>
+          </div>
+
+        </article>
+      </li>
+
+      <!-- ── 3: Efraín Bolívar Delgado Arciniegas ── -->
+      <li class="member-item fade-in-up" style="--card-delay: 400ms">
+        <article class="member-card">
+
+          <!-- FOTO: cuando llegue la imagen, reemplazar .member-photo-bg por:
+               <img src="assets/images/efrain-delgado.jpg"
+                    alt="Efraín Bolívar Delgado Arciniegas"
+                    class="member-photo-img">
+               y quitar role="img" + aria-label del <figure> -->
+          <figure
+            class="member-photo member-photo--efrain"
+            role="img"
+            aria-label="Fotografía de Efraín Bolívar Delgado Arciniegas, tercera voz y requinto"
+          >
+            <div class="member-photo-bg" aria-hidden="true"></div>
+            <div class="member-photo__overlay" aria-hidden="true"></div>
+            <span class="member-voice-number" aria-hidden="true">3ª</span>
+          </figure>
+
+          <div class="member-info">
+            <h3 class="member-name">Efraín Bolívar Delgado Arciniegas</h3>
+            <p class="member-role">
+              <span class="lang-es">3ª Voz &amp; Requinto</span>
+              <span class="lang-en">3rd Voice &amp; Requinto</span>
+            </p>
+            <p class="member-bio member-bio--pending">
+              <em>
+                <span class="lang-es">Biografía próximamente…</span>
+                <span class="lang-en">Biography coming soon…</span>
+              </em>
+            </p>
+          </div>
+
+        </article>
+      </li>
+
+    </ul><!-- /members-list -->
+  </section><!-- /integrantes -->
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN TRAYECTORIA
+  ═══════════════════════════════════════════ -->
+  <section id="trayectoria" class="trayectoria" aria-labelledby="trayectoria-titulo">
+
+    <!-- Mapa decorativo de Sudamérica — solo visual, punto en Nariño -->
+    <div class="tray-map" aria-hidden="true">
+      <svg viewBox="0 0 230 310" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="
+          M 96,5 C 112,2 130,7 146,17
+          C 162,27 172,45 180,64
+          C 189,83 195,106 200,130
+          C 206,154 210,178 209,202
+          C 208,225 202,247 192,265
+          C 182,283 167,297 150,305
+          C 132,312 112,312 93,304
+          C 74,295 58,278 44,258
+          C 30,238 20,214 15,190
+          C 10,166 13,141 20,118
+          C 27,95 38,73 53,54
+          C 68,35 82,8 96,5 Z
+        "/>
+        <!-- Punto luminoso en Nariño, Colombia -->
+        <circle cx="66" cy="74" r="5" fill="currentColor"/>
+        <circle cx="66" cy="74" r="10" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+      </svg>
+    </div>
+
+    <!-- Encabezado -->
+    <div class="section-header fade-in-up">
+      <p class="section-eyebrow">
+        <span class="lang-es">TRAYECTORIA</span>
+        <span class="lang-en">JOURNEY</span>
+      </p>
+      <h2 id="trayectoria-titulo" class="section-title">
+        <span class="lang-es">Más de 3 Décadas en los Grandes Escenarios</span>
+        <span class="lang-en">More Than 3 Decades on the Great Stages</span>
+      </h2>
+      <div class="section-line" aria-hidden="true"></div>
+      <p class="section-intro">
+        <span class="lang-es">
+          De Túquerres al mundo — presencia en festivales internacionales,
+          televisión nacional e internacional, y los escenarios más importantes
+          de Colombia y América Latina.
+        </span>
+        <span class="lang-en">
+          From Túquerres to the world — presence at international festivals,
+          national and international television, and the most important stages
+          of Colombia and Latin America.
+        </span>
+      </p>
+    </div>
+
+    <!-- Barra de estadísticas (counter animado al entrar al viewport) -->
+    <div class="stats-bar fade-in-up" role="list" aria-label="Estadísticas del trío">
+
+      <div class="stat-item" role="listitem">
+        <span class="stat-number" data-target="33" data-suffix="+">0</span>
+        <span class="stat-label">
+          <span class="lang-es">Años de trayectoria</span>
+          <span class="lang-en">Years of journey</span>
+        </span>
+      </div>
+
+      <div class="stat-divider" aria-hidden="true"></div>
+
+      <div class="stat-item" role="listitem">
+        <span class="stat-number" data-target="9" data-suffix="+">0</span>
+        <span class="stat-label">
+          <span class="lang-es">Países</span>
+          <span class="lang-en">Countries</span>
+        </span>
+      </div>
+
+      <div class="stat-divider" aria-hidden="true"></div>
+
+      <div class="stat-item" role="listitem">
+        <span class="stat-number" data-target="8" data-suffix="">0</span>
+        <span class="stat-label">
+          <span class="lang-es">Álbumes y CDs</span>
+          <span class="lang-en">Albums and CDs</span>
+        </span>
+      </div>
+
+      <div class="stat-divider" aria-hidden="true"></div>
+
+      <div class="stat-item" role="listitem">
+        <span class="stat-number" data-target="19" data-suffix="+">0</span>
+        <span class="stat-label">
+          <span class="lang-es">Festivales internacionales</span>
+          <span class="lang-en">International festivals</span>
+        </span>
+      </div>
+
+    </div><!-- /stats-bar -->
+
+    <!-- Grid 2×2 de logros por categoría -->
+    <ul class="achievements-grid" role="list" aria-label="Categorías de logros artísticos">
+
+      <!-- 1: Actuaciones Internacionales -->
+      <li class="achievement-item fade-in-up" style="--ach-delay: 0ms">
+        <article class="achievement-card">
+          <div class="achievement-icon" aria-hidden="true">
+            <!-- SVG: Globo terráqueo -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="12" cy="12" r="9.5"/>
+              <path d="M12 2.5C9 5.5 7.5 8.6 7.5 12s1.5 6.5 4.5 9.5"/>
+              <path d="M12 2.5C15 5.5 16.5 8.6 16.5 12s-1.5 6.5-4.5 9.5"/>
+              <path d="M2.5 12h19M4.5 7.5h15M4.5 16.5h15"/>
+            </svg>
+          </div>
+          <h3 class="achievement-title">
+            <span class="lang-es">Actuaciones Internacionales</span>
+            <span class="lang-en">International Performances</span>
+          </h3>
+          <ul class="achievement-list">
+            <li>
+              <span class="lang-es">Argentina, Cuba, Chile, Ecuador, Estados Unidos, México, Perú, Puerto Rico y Venezuela</span>
+              <span class="lang-en">Argentina, Cuba, Chile, Ecuador, United States, Mexico, Peru, Puerto Rico and Venezuela</span>
+            </li>
+            <li>Los Tres Diamantes · Trío Los Panchos · Los Tres Reyes <em>(México)</em></li>
+            <li>Johnny Albino y su Trío San Juan <em>(Puerto Rico)</em></li>
+            <li>Trío Gaucho · Los Nocheros <em>(Argentina)</em></li>
+            <li>Trío Los Galenos · Trío Los Embajadores <em>(Cuba)</em></li>
+            <li>Trío Hermanos Arriagada <em>(Chile)</em></li>
+            <li>Trío Ellas <em>(Estados Unidos)</em></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- 2: Televisión y Radio -->
+      <li class="achievement-item fade-in-up" style="--ach-delay: 150ms">
+        <article class="achievement-card">
+          <div class="achievement-icon" aria-hidden="true">
+            <!-- SVG: Señal de transmisión / micrófono -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M9 9a4.5 4.5 0 0 1 6 0"/>
+              <path d="M5.5 5.5a10 10 0 0 1 13 0"/>
+              <line x1="12" y1="12" x2="12" y2="21"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3 class="achievement-title">
+            <span class="lang-es">Televisión y Radio</span>
+            <span class="lang-en">Television and Radio</span>
+          </h3>
+          <ul class="achievement-list">
+            <li>Jorge Barón TV — <em>«Embajadores de la Música Colombiana»</em>, Bogotá (1994)</li>
+            <li>Caracol TV · RCN TV</li>
+            <li>Teleantioquia — <em>«Serenata»</em> (2005 · 2011)</li>
+            <li>Universidad de Nariño TV · Universidad del Cauca TV</li>
+            <li>TV Pacífico · Canal Azufral · TV Mundo Digital, Phoenix AZ, EE. UU.</li>
+            <li>Emisora Onda Cit Radio, Santa Cruz de Tenerife, Islas Canarias, España</li>
+            <li>El Tiempo · El Espectador · Occidente de Cali · Diario del Sur</li>
+            <li>Revista Élite — circulación internacional</li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- 3: Festivales y Concursos -->
+      <li class="achievement-item fade-in-up" style="--ach-delay: 300ms">
+        <article class="achievement-card">
+          <div class="achievement-icon" aria-hidden="true">
+            <!-- SVG: Trofeo -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+              <path d="M4 22h16"/>
+              <path d="M9 18v4M15 18v4"/>
+              <path d="M6 4h12v9a6 6 0 0 1-12 0Z"/>
+            </svg>
+          </div>
+          <h3 class="achievement-title">
+            <span class="lang-es">Festivales y Concursos</span>
+            <span class="lang-en">Festivals and Competitions</span>
+          </h3>
+          <ul class="achievement-list">
+            <li>IX y XI Encuentro Nacional de Tríos Banco del Estado, Popayán — 2.° puesto (1993)</li>
+            <li>III Festival Nacional de los Mejores Tríos de Colombia, Cali (1995)</li>
+            <li>Encuentro de los Mejores Tríos del Mundo, Estadio Libertad, Pasto (1994)</li>
+            <li>Encuentro Internacional de Tríos, Tulcán, Ecuador (2004)</li>
+            <li>XIV Festival Internacional de Tríos Onomástico de Túquerres (2024)</li>
+            <li>XV Festival Internacional Ipiales Cuna de Grandes Tríos (2022)</li>
+            <li>V, VIII, IX Concurso Internacional de Tríos Onomástico, Pasto</li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- 4: Reconocimientos Especiales -->
+      <li class="achievement-item fade-in-up" style="--ach-delay: 450ms">
+        <article class="achievement-card">
+          <div class="achievement-icon" aria-hidden="true">
+            <!-- SVG: Estrella / reconocimiento -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>
+            </svg>
+          </div>
+          <h3 class="achievement-title">
+            <span class="lang-es">Reconocimientos Especiales</span>
+            <span class="lang-en">Special Recognitions</span>
+          </h3>
+          <ul class="achievement-list">
+            <li>Revista Cultural <em>Correo del Sur</em>: Trío más destacado del Sur Colombiano (1992, 1993, 2002)</li>
+            <li>Homenaje a la Señorita Colombia y Reinas de Belleza, Coliseo Cubierto Ipiales (1997)</li>
+            <li>Proposición N.° 090 del Honorable Concejo Municipal de Pasto — reconocimiento artístico al fundador Jorge Edgar Benavides Ortega (22-06-2017)</li>
+            <li>Conmemoración Centenario Puerto Asís, Putumayo (2012)</li>
+            <li>XVIII Encuentro Jurisdicción Contencioso Administrativa, Neiva — Magistrados del Consejo de Estado (2012)</li>
+          </ul>
+        </article>
+      </li>
+
+    </ul><!-- /achievements-grid -->
+  </section><!-- /trayectoria -->
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN DISCOGRAFÍA
+  ═══════════════════════════════════════════ -->
+  <section id="discografia" class="discografia" aria-labelledby="discografia-titulo">
+
+    <!-- Símbolos SVG reutilizables por todos los álbumes -->
+    <svg aria-hidden="true" style="display:none" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="disc-vinyl" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="27"  stroke="currentColor" stroke-width="0.8" opacity="0.42"/>
+        <circle cx="30" cy="30" r="20"  stroke="currentColor" stroke-width="0.6" opacity="0.30"/>
+        <circle cx="30" cy="30" r="13"  stroke="currentColor" stroke-width="0.6" opacity="0.20"/>
+        <circle cx="30" cy="30" r="6"   stroke="currentColor" stroke-width="1.2" opacity="0.48"/>
+        <circle cx="30" cy="30" r="2.5" fill="currentColor"                      opacity="0.62"/>
+      </symbol>
+      <symbol id="play-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5.5v13L19 12z"/>
+      </symbol>
+      <symbol id="arrow-prev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </symbol>
+      <symbol id="arrow-next" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18l6-6-6-6"/>
+      </symbol>
+    </svg>
+
+    <!-- Pentagrama decorativo de fondo -->
+    <div class="disco-stafflines" aria-hidden="true">
+      <svg viewBox="0 0 1400 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="22"  x2="1400" y2="22"  stroke="currentColor" stroke-width="0.8"/>
+        <line x1="0" y1="46"  x2="1400" y2="46"  stroke="currentColor" stroke-width="0.8"/>
+        <line x1="0" y1="70"  x2="1400" y2="70"  stroke="currentColor" stroke-width="0.8"/>
+        <line x1="0" y1="94"  x2="1400" y2="94"  stroke="currentColor" stroke-width="0.8"/>
+        <line x1="0" y1="112" x2="1400" y2="112" stroke="currentColor" stroke-width="0.8"/>
+        <text x="55"   y="42"  font-size="22" font-family="Georgia,serif" fill="currentColor">♩</text>
+        <text x="255"  y="66"  font-size="18" font-family="Georgia,serif" fill="currentColor">♪</text>
+        <text x="490"  y="90"  font-size="20" font-family="Georgia,serif" fill="currentColor">♫</text>
+        <text x="700"  y="42"  font-size="16" font-family="Georgia,serif" fill="currentColor">♬</text>
+        <text x="900"  y="68"  font-size="20" font-family="Georgia,serif" fill="currentColor">♩</text>
+        <text x="1100" y="42"  font-size="16" font-family="Georgia,serif" fill="currentColor">♪</text>
+        <text x="1310" y="88"  font-size="18" font-family="Georgia,serif" fill="currentColor">♫</text>
+      </svg>
+    </div>
+
+    <!-- Encabezado -->
+    <div class="section-header fade-in-up">
+      <p class="section-eyebrow">
+        <span class="lang-es">DISCOGRAFÍA</span>
+        <span class="lang-en">DISCOGRAPHY</span>
+      </p>
+      <h2 id="discografia-titulo" class="section-title">
+        <span class="lang-es">Una Vida en Estudio</span>
+        <span class="lang-en">A Life in the Studio</span>
+      </h2>
+      <div class="section-line" aria-hidden="true"></div>
+      <p class="section-intro">
+        <span class="lang-es">
+          Desde 1993, el Trío Magia Blanca ha dejado su voz grabada en estudios de
+          Medellín y Pasto — un legado sonoro de más de tres décadas.
+        </span>
+        <span class="lang-en">
+          Since 1993, Trío Magia Blanca has recorded their voice in studios in
+          Medellín and Pasto — a sound legacy of more than three decades.
+        </span>
+      </p>
+    </div>
+
+    <!-- Carrusel de álbumes -->
+    <div class="carousel-wrapper fade-in-up" id="discografia-carousel">
+
+      <button class="carousel-btn carousel-btn--prev" id="disco-prev" aria-label="Álbum anterior" disabled>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#arrow-prev"/></svg>
+      </button>
+
+      <div class="carousel-viewport">
+        <ul class="albums-track" id="albums-track" role="list" aria-label="Álbumes del Trío Magia Blanca de Colombia">
+
+          <!-- ── 1: Volumen I (1993) ── -->
+          <li class="album-item" role="listitem">
+            <article class="album-card">
+              <!-- IMAGEN REAL: en .album-cover-bg agregar background-image: url('assets/images/album-1-ire-muy-lejos.jpg') -->
+              <div class="album-cover album-cover--1">
+                <div class="album-cover-bg" aria-hidden="true"></div>
+                <span class="album-year-display" aria-hidden="true">1993</span>
+                <svg class="album-disc-icon" aria-hidden="true" viewBox="0 0 60 60"><use href="#disc-vinyl"/></svg>
+                <div class="album-play-overlay" aria-hidden="true">
+                  <svg class="album-play-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#play-icon"/></svg>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3 class="album-title">Volumen I — <em>«Iré muy lejos»</em></h3>
+                <p class="album-year-label">1993</p>
+                <p class="album-label-name">Discos Victoria, Medellín</p>
+                <p class="album-note">
+                  <span class="lang-es">Primer álbum. Patrocinado por la Asociación Magia Blanca, Túquerres.</span>
+                  <span class="lang-en">Debut album. Sponsored by Asociación Magia Blanca, Túquerres.</span>
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <!-- ── 2: Volumen II (1994) ── -->
+          <li class="album-item" role="listitem">
+            <article class="album-card">
+              <!-- IMAGEN REAL: en .album-cover-bg agregar background-image: url('assets/images/album-2-amor-prohibido.jpg') -->
+              <div class="album-cover album-cover--2">
+                <div class="album-cover-bg" aria-hidden="true"></div>
+                <span class="album-year-display" aria-hidden="true">1994</span>
+                <svg class="album-disc-icon" aria-hidden="true" viewBox="0 0 60 60"><use href="#disc-vinyl"/></svg>
+                <div class="album-play-overlay" aria-hidden="true">
+                  <svg class="album-play-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#play-icon"/></svg>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3 class="album-title">Volumen II — <em>«Amor Prohibido»</em></h3>
+                <p class="album-year-label">1994</p>
+                <p class="album-label-name">Discos Fuentes, Medellín</p>
+                <p class="album-note">
+                  <span class="lang-es">Con el respaldo del Dr. Gabriel Cuéllar / Agrocuéllar.</span>
+                  <span class="lang-en">Supported by Dr. Gabriel Cuéllar / Agrocuéllar.</span>
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <!-- ── 3: Serenata Vol. 2 (2004) ── -->
+          <li class="album-item" role="listitem">
+            <article class="album-card">
+              <!-- IMAGEN REAL: en .album-cover-bg agregar background-image: url('assets/images/album-3-serenata-2.jpg') -->
+              <div class="album-cover album-cover--3">
+                <div class="album-cover-bg" aria-hidden="true"></div>
+                <span class="album-year-display" aria-hidden="true">2004</span>
+                <svg class="album-disc-icon" aria-hidden="true" viewBox="0 0 60 60"><use href="#disc-vinyl"/></svg>
+                <div class="album-play-overlay" aria-hidden="true">
+                  <svg class="album-play-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#play-icon"/></svg>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3 class="album-title">CD Serenata <em>Vol. 2</em></h3>
+                <p class="album-year-label">2004</p>
+                <p class="album-label-name">Fuego de Volcán, Pasto</p>
+                <ul class="album-tracks">
+                  <li>«Culpable»</li>
+                  <li>«Te espero»</li>
+                </ul>
+              </div>
+            </article>
+          </li>
+
+          <!-- ── 4: Serenata Vol. 3 (2005) ── -->
+          <li class="album-item" role="listitem">
+            <article class="album-card">
+              <!-- IMAGEN REAL: en .album-cover-bg agregar background-image: url('assets/images/album-4-serenata-3.jpg') -->
+              <div class="album-cover album-cover--4">
+                <div class="album-cover-bg" aria-hidden="true"></div>
+                <span class="album-year-display" aria-hidden="true">2005</span>
+                <svg class="album-disc-icon" aria-hidden="true" viewBox="0 0 60 60"><use href="#disc-vinyl"/></svg>
+                <div class="album-play-overlay" aria-hidden="true">
+                  <svg class="album-play-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#play-icon"/></svg>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3 class="album-title">CD Serenata <em>Vol. 3</em></h3>
+                <p class="album-year-label">2005</p>
+                <p class="album-label-name">Fuego de Volcán, Pasto</p>
+                <ul class="album-tracks">
+                  <li>«Interrogación»</li>
+                  <li>«Nuestro juramento»</li>
+                  <li>«Madre amor»</li>
+                </ul>
+              </div>
+            </article>
+          </li>
+
+          <!-- ── 5: Serenata Vol. 5 (2008) ── -->
+          <li class="album-item" role="listitem">
+            <article class="album-card">
+              <!-- IMAGEN REAL: en .album-cover-bg agregar background-image: url('assets/images/album-5-serenata-5.jpg') -->
+              <div class="album-cover album-cover--5">
+                <div class="album-cover-bg" aria-hidden="true"></div>
+                <span class="album-year-display" aria-hidden="true">2008</span>
+                <svg class="album-disc-icon" aria-hidden="true" viewBox="0 0 60 60"><use href="#disc-vinyl"/></svg>
+                <div class="album-play-overlay" aria-hidden="true">
+                  <svg class="album-play-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#play-icon"/></svg>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3 class="album-title">CD Serenata <em>Vol. 5</em></h3>
+                <p class="album-year-label">2008</p>
+                <p class="album-label-name">Fuego de Volcán, Pasto</p>
+                <ul class="album-tracks">
+                  <li>«Romance de mi destino»</li>
+                </ul>
+              </div>
+            </article>
+          </li>
+
+          <!-- ── 6: Grabación Especial (2011) ── -->
+          <li class="album-item" role="listitem">
+            <article class="album-card">
+              <!-- IMAGEN REAL: en .album-cover-bg agregar background-image: url('assets/images/album-6-especial-2011.jpg') -->
+              <div class="album-cover album-cover--6">
+                <div class="album-cover-bg" aria-hidden="true"></div>
+                <span class="album-year-display" aria-hidden="true">2011</span>
+                <svg class="album-disc-icon" aria-hidden="true" viewBox="0 0 60 60"><use href="#disc-vinyl"/></svg>
+                <div class="album-play-overlay" aria-hidden="true">
+                  <svg class="album-play-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#play-icon"/></svg>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3 class="album-title">CD Grabación Especial</h3>
+                <p class="album-year-label">2011</p>
+                <p class="album-label-name">Fuego de Volcán, Pasto</p>
+                <ul class="album-tracks">
+                  <li>«Interrogación»</li>
+                  <li>«Nuestro juramento»</li>
+                  <li>«Romance de mi destino»</li>
+                </ul>
+              </div>
+            </article>
+          </li>
+
+          <!-- ── 7: Álbum Vol. 8 (2018) ── -->
+          <li class="album-item" role="listitem">
+            <article class="album-card">
+              <!-- IMAGEN REAL: en .album-cover-bg agregar background-image: url('assets/images/album-7-cancion-del-alma.jpg') -->
+              <div class="album-cover album-cover--7">
+                <div class="album-cover-bg" aria-hidden="true"></div>
+                <span class="album-year-display" aria-hidden="true">2018</span>
+                <svg class="album-disc-icon" aria-hidden="true" viewBox="0 0 60 60"><use href="#disc-vinyl"/></svg>
+                <div class="album-play-overlay" aria-hidden="true">
+                  <svg class="album-play-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#play-icon"/></svg>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3 class="album-title">CD Álbum Vol. 8 — <em>«Canción del alma»</em></h3>
+                <p class="album-year-label">2018</p>
+                <p class="album-label-name">Fuego de Volcán, Pasto</p>
+                <ul class="album-tracks">
+                  <li>«Canción del alma»</li>
+                  <li>«Mi serenata»</li>
+                </ul>
+              </div>
+            </article>
+          </li>
+
+          <!-- ── 8: Los buenos amigos (2024) — FEATURED ── -->
+          <li class="album-item album-item--featured" role="listitem">
+            <article class="album-card" aria-current="true">
+              <span class="album-badge">
+                <span class="lang-es">Nuevo</span>
+                <span class="lang-en">New</span>
+              </span>
+              <!-- IMAGEN REAL: en .album-cover-bg agregar background-image: url('assets/images/album-8-buenos-amigos.jpg') -->
+              <div class="album-cover album-cover--8">
+                <div class="album-cover-bg" aria-hidden="true"></div>
+                <span class="album-year-display" aria-hidden="true">2024</span>
+                <svg class="album-disc-icon" aria-hidden="true" viewBox="0 0 60 60"><use href="#disc-vinyl"/></svg>
+                <div class="album-play-overlay" aria-hidden="true">
+                  <svg class="album-play-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#play-icon"/></svg>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3 class="album-title"><em>«Trío Magia Blanca de los buenos amigos»</em></h3>
+                <p class="album-year-label">2024</p>
+                <p class="album-label-name">Fuego de Volcán + Nix Audio Digital, Pasto</p>
+                <ul class="album-tracks">
+                  <li>«Profundo Amor» — <span class="lang-es">inédito</span><span class="lang-en">original</span></li>
+                  <li>«Homenaje» — <span class="lang-es">inédito</span><span class="lang-en">original</span></li>
+                  <li><span class="lang-es">14 temas en total</span><span class="lang-en">14 tracks total</span></li>
+                </ul>
+                <p class="album-note">
+                  <span class="lang-es">Lanzamiento octubre 2024</span>
+                  <span class="lang-en">Released October 2024</span>
+                </p>
+              </div>
+            </article>
+          </li>
+
+        </ul><!-- /albums-track -->
+      </div><!-- /carousel-viewport -->
+
+      <button class="carousel-btn carousel-btn--next" id="disco-next" aria-label="Álbum siguiente">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#arrow-next"/></svg>
+      </button>
+
+    </div><!-- /carousel-wrapper -->
+  </section><!-- /discografia -->
+
+  <!-- ══════════════════════════════════════════════════════
+       SECCIÓN 05 — VIDEOS MUSICALES
+       Player principal + galería de 22 miniaturas.
+       Para agregar un video real:
+         1. Obtén el ID de YouTube (los ~11 caracteres en youtube.com/watch?v=ESTE_ID)
+         2. Reemplaza data-video-id="AQUI_EL_ID_YOUTUBE_XX" con ese ID
+         3. El thumbnail se autocarga vía JS: img.youtube.com/vi/ID/mqdefault.jpg
+  ══════════════════════════════════════════════════════ -->
+  <section id="videos" class="videos" aria-label="Videos musicales del Trío Magia Blanca">
+
+    <!-- Encabezado de sección -->
+    <div class="section-header fade-in-up">
+      <p class="section-eyebrow">
+        <span class="lang-es">VIDEOS</span>
+        <span class="lang-en">VIDEOS</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-es">Música que se Ve y se Siente</span>
+        <span class="lang-en">Music to See and Feel</span>
+      </h2>
+      <div class="section-line" aria-hidden="true"></div>
+      <p class="section-intro">
+        <span class="lang-es">Cada interpretación es un viaje al corazón del bolero y la música latinoamericana. Filmación: Producciones Delgado, Pasto.</span>
+        <span class="lang-en">Every performance is a journey to the heart of bolero and Latin American music. Filming: Producciones Delgado, Pasto.</span>
+      </p>
+    </div>
+
+    <!-- ── Player principal ── -->
+    <div class="video-featured fade-in-up" id="video-featured">
+      <div class="video-frame-wrapper" id="video-frame-wrapper">
+
+        <!-- Esquinas decorativas tipo claqueta de cine -->
+        <span class="frame-corner frame-corner--tl" aria-hidden="true"></span>
+        <span class="frame-corner frame-corner--tr" aria-hidden="true"></span>
+        <span class="frame-corner frame-corner--bl" aria-hidden="true"></span>
+        <span class="frame-corner frame-corner--br" aria-hidden="true"></span>
+
+        <!-- Preview — visible antes del click del usuario.
+             Cuando tengas el ID de YouTube del video activo, el thumbnail
+             se carga automáticamente en JS: img.youtube.com/vi/ID/mqdefault.jpg -->
+        <div class="video-preview" id="video-preview" aria-label="Vista previa: Esta Cobardía">
+          <div class="video-preview-bg" id="preview-bg" aria-hidden="true"></div>
+          <button class="video-play-btn" id="video-play-btn" aria-label="Reproducir: Esta Cobardía">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13L19 12z"/></svg>
+          </button>
+        </div>
+
+        <!-- iframe YouTube — src se inyecta por JS al hacer click.
+             Parámetros: rel=0 (sin sugerencias externas) · modestbranding=1
+                         color=white (barra blanca) · autoplay=1 -->
+        <iframe
+          id="video-iframe"
+          class="video-iframe"
+          title="Video musical: Esta Cobardía — Trío Magia Blanca de Colombia"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+
+      </div><!-- /video-frame-wrapper -->
+
+      <!-- Contador y título del video activo -->
+      <div class="video-featured-info">
+        <span class="video-counter" id="video-counter" aria-live="polite">01&thinsp;/&thinsp;22</span>
+        <h3 class="video-featured-title" id="video-featured-title">Esta Cobardía</h3>
+      </div>
+    </div><!-- /video-featured -->
+
+    <!-- ── Galería de 22 miniaturas ── -->
+    <ul class="video-thumbnails" id="video-thumbnails" role="list" aria-label="Seleccionar video">
+
+      <!-- ── 01: Esta Cobardía ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #01 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 0ms">
+        <button class="video-thumb-btn" aria-label="Ver: Esta Cobardía" aria-pressed="true"
+                data-index="0" data-title="Esta Cobardía" data-video-id=tnmXuJbA8BE>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">01</span>
+            <span class="thumb-title">Esta Cobardía</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 02: Cali Pachanguero ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #02 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 100ms">
+        <button class="video-thumb-btn" aria-label="Ver: Cali Pachanguero" aria-pressed="false"
+                data-index="1" data-title="Cali Pachanguero" data-video-id=uI6AdCkd3eo>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">02</span>
+            <span class="thumb-title">Cali Pachanguero</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 03: Serenata Onomástico a Pasto ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #03 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 200ms">
+        <button class="video-thumb-btn" aria-label="Ver: Serenata Onomástico a Pasto" aria-pressed="false"
+                data-index="2" data-title="Serenata Onomástico a Pasto" data-video-id=rfPBtiSGIAk>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">03</span>
+            <span class="thumb-title">Serenata Onomástico a Pasto</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 04: Confiada ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #04 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 300ms">
+        <button class="video-thumb-btn" aria-label="Ver: Confiada" aria-pressed="false"
+                data-index="3" data-title="Confiada" data-video-id=aIT40NbilAA>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">04</span>
+            <span class="thumb-title">Confiada</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 05: Todo por seguirte ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #05 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 0ms">
+        <button class="video-thumb-btn" aria-label="Ver: Todo por seguirte" aria-pressed="false"
+                data-index="4" data-title="Todo por seguirte" data-video-id=YP98QKxtPg4>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">05</span>
+            <span class="thumb-title">Todo por seguirte</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 06: El almanaque ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #06 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 100ms">
+        <button class="video-thumb-btn" aria-label="Ver: El almanaque" aria-pressed="false"
+                data-index="5" data-title="El almanaque" data-video-id=UgxFvtqt3lc>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">06</span>
+            <span class="thumb-title">El almanaque</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 07: Si tú me olvidas ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #07 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 200ms">
+        <button class="video-thumb-btn" aria-label="Ver: Si tú me olvidas" aria-pressed="false"
+                data-index="6" data-title="Si tú me olvidas" data-video-id=x7Nxz5NT3q4>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">07</span>
+            <span class="thumb-title">Si tú me olvidas</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 08: Como un bolero ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #08 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 300ms">
+        <button class="video-thumb-btn" aria-label="Ver: Como un bolero" aria-pressed="false"
+                data-index="7" data-title="Como un bolero" data-video-id=tnBny37WU0A>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">08</span>
+            <span class="thumb-title">Como un bolero</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 09: Profundo amor ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #09 -->
+      <!-- Compositor: Jesse Armenta, Phoenix, Arizona -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 0ms">
+        <button class="video-thumb-btn" aria-label="Ver: Profundo amor" aria-pressed="false"
+                data-index="8" data-title="Profundo amor" data-video-id=ZM7apUQ_ERg>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">09</span>
+            <span class="thumb-title">Profundo amor</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 10: Mis flores negras ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #10 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 100ms">
+        <button class="video-thumb-btn" aria-label="Ver: Mis flores negras" aria-pressed="false"
+                data-index="9" data-title="Mis flores negras" data-video-id=Ihl6aZAui1E>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">10</span>
+            <span class="thumb-title">Mis flores negras</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 11: Quizás, quizás, quizás ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #11 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 200ms">
+        <button class="video-thumb-btn" aria-label="Ver: Quizás, quizás, quizás" aria-pressed="false"
+                data-index="10" data-title="Quizás, quizás, quizás" data-video-id=AS-YL9TlZ-M>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">11</span>
+            <span class="thumb-title">Quizás, quizás, quizás</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 12: ARREPENTIDA ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #12 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 300ms">
+        <button class="video-thumb-btn" aria-label="Ver: ARREPENTIDA" aria-pressed="false"
+                data-index="11" data-title="ARREPENTIDA" data-video-id=uZDcoAGmgvA>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">12</span>
+            <span class="thumb-title">ARREPENTIDA</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 13: Tú eres madre amor ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #13 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 0ms">
+        <button class="video-thumb-btn" aria-label="Ver: Tú eres madre amor" aria-pressed="false"
+                data-index="12" data-title="Tú eres madre amor" data-video-id=D1eGsz6FDpw>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">13</span>
+            <span class="thumb-title">Tú eres madre amor</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 14: Canción del alma ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #14 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 100ms">
+        <button class="video-thumb-btn" aria-label="Ver: Canción del alma" aria-pressed="false"
+                data-index="13" data-title="Canción del alma" data-video-id=-Zri_sjEYbE>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">14</span>
+            <span class="thumb-title">Canción del alma</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 15: Magia Blanca ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #15 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 200ms">
+        <button class="video-thumb-btn" aria-label="Ver: Magia Blanca" aria-pressed="false"
+                data-index="14" data-title="Magia Blanca" data-video-id=FdIPXCR7el0>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">15</span>
+            <span class="thumb-title">Magia Blanca</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 16: Urge ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #16 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 300ms">
+        <button class="video-thumb-btn" aria-label="Ver: Urge" aria-pressed="false"
+                data-index="15" data-title="Urge" data-video-id=OU0PBpUWPGI>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">16</span>
+            <span class="thumb-title">Urge</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 17: Oh pintor ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #17 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 0ms">
+        <button class="video-thumb-btn" aria-label="Ver: Oh pintor" aria-pressed="false"
+                data-index="16" data-title="Oh pintor" data-video-id=JrLkv-N2NOw>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">17</span>
+            <span class="thumb-title">Oh pintor</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 18: SÚPLICA ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #18 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 100ms">
+        <button class="video-thumb-btn" aria-label="Ver: SÚPLICA" aria-pressed="false"
+                data-index="17" data-title="SÚPLICA" data-video-id=xDmepMuC8mQ>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">18</span>
+            <span class="thumb-title">SÚPLICA</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 19: El canelazo ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #19 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 200ms">
+        <button class="video-thumb-btn" aria-label="Ver: El canelazo" aria-pressed="false"
+                data-index="18" data-title="El canelazo" data-video-id=ZbpoZgVR3x0>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">19</span>
+            <span class="thumb-title">El canelazo</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 20: Invernal ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #20 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 300ms">
+        <button class="video-thumb-btn" aria-label="Ver: Invernal" aria-pressed="false"
+                data-index="19" data-title="Invernal" data-video-id=2UYoB7mcp0w>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">20</span>
+            <span class="thumb-title">Invernal</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 21: Regresa ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #21 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 0ms">
+        <button class="video-thumb-btn" aria-label="Ver: Regresa" aria-pressed="false"
+                data-index="20" data-title="Regresa" data-video-id=wUXlGQ7_xTM>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">21</span>
+            <span class="thumb-title">Regresa</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+      <!-- ── 22: Que falto ── -->
+      <!-- data-video-id: reemplazar con el ID real de YouTube del video #22 -->
+      <li class="video-thumb-item fade-in-up" style="--vid-delay: 100ms">
+        <button class="video-thumb-btn" aria-label="Ver: Que falto" aria-pressed="false"
+                data-index="21" data-title="Que falto" data-video-id=D7RBliAIOZk>
+          <div class="thumb-visual">
+            <div class="thumb-bg" aria-hidden="true"></div>
+            <span class="thumb-number" aria-hidden="true">22</span>
+            <span class="thumb-title">Que falto</span>
+            <span class="thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13L19 12z"/></svg></span>
+          </div>
+        </button>
+      </li>
+
+    </ul><!-- /video-thumbnails -->
+
+  </section><!-- /videos -->
+
+  <!-- ══════════════════════════════════════════════════════
+       SECCIÓN 06 — CONTACTO
+       Layout: card de info (izq) + formulario (der)
+       Para agregar redes sociales reales:
+         Buscar los comentarios "ENLACE REAL" y reemplazar href="#"
+  ══════════════════════════════════════════════════════ -->
+  <section id="contacto" class="contacto" aria-label="Contacto — Trío Magia Blanca">
+
+    <!-- Decoración: ondas musicales en el fondo (aria-hidden) -->
+    <svg class="contacto-waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 C240,20 480,100 720,60 C960,20 1200,100 1440,60 L1440,120 L0,120 Z"/>
+      <path d="M0,85 C200,50 400,108 600,78 C800,48 1000,98 1200,68 C1320,50 1390,72 1440,62 L1440,120 L0,120 Z" opacity="0.55"/>
+    </svg>
+
+    <!-- Encabezado -->
+    <div class="section-header fade-in-up">
+      <p class="section-eyebrow">
+        <span class="lang-es">CONTACTO</span>
+        <span class="lang-en">CONTACT</span>
+      </p>
+      <h2 class="section-title">
+        <span class="lang-es">¿Quieres Contratarnos?</span>
+        <span class="lang-en">Want to Hire Us?</span>
+      </h2>
+      <div class="section-line" aria-hidden="true"></div>
+      <p class="section-intro">
+        <span class="lang-es">Estamos disponibles para serenatas, eventos, bodas, celebraciones corporativas y toda ocasión que merezca la mejor música. Escríbenos y hagamos magia juntos.</span>
+        <span class="lang-en">We are available for serenades, events, weddings, corporate celebrations and every occasion that deserves the finest music. Write to us and let's make magic together.</span>
+      </p>
+    </div>
+
+    <!-- Layout de dos columnas -->
+    <div class="contacto-grid">
+
+      <!-- ── Columna izquierda: información de contacto ── -->
+      <div class="contacto-info fade-in-up" style="--card-delay: 0ms">
+        <address class="contact-card">
+
+          <p class="contact-quote"><em>«La música es el lenguaje del alma»</em></p>
+          <div class="contact-divider" aria-hidden="true"></div>
+
+          <!-- Email -->
+          <a href="mailto:jorgebenavidesortega@hotmail.com" class="contact-item">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <polyline points="3,7 12,13 21,7"/>
+              </svg>
+            </span>
+            <span class="contact-text">jorgebenavidesortega@hotmail.com</span>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/573103399770" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.878-1.416A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.064-1.112l-.29-.175-3.006.873.84-3.07-.19-.305A8 8 0 1112 20z"/>
+              </svg>
+            </span>
+            <span class="contact-text">+57 310 339 9770</span>
+          </a>
+
+          <!-- Ubicación (no es un enlace) -->
+          <span class="contact-item contact-item--static">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+              </svg>
+            </span>
+            <span class="contact-text">Pasto, Nariño, Colombia</span>
+          </span>
+
+          <hr class="contact-separator" aria-hidden="true">
+
+          <!-- Redes sociales -->
+          <div class="social-links" role="list" aria-label="Redes sociales">
+            <!-- ENLACE REAL: cambiar href="#" por la URL real de Facebook del trío -->
+            <a href="#" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer" role="listitem">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/triomagiablanca?igsh=MXM2bTQ2NmdxMW5zeA==" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer" role="listitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="https://youtube.com/@triomagiablancadecolombia9019?si=Zs6Wc3toF9w1S8NS" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer" role="listitem">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@triomagiblanca_1951?_r=1&amp;_t=ZS-9736sZyUWVY" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer" role="listitem">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.79 1.54V6.78a4.84 4.84 0 01-1.02-.09z"/></svg>
+            </a>
+          </div>
+
+          <p class="contact-note">
+            <span class="lang-es">Las tarifas se informan de manera personalizada según el evento y la fecha.</span>
+            <span class="lang-en">Rates are shared individually based on the event and date.</span>
+          </p>
+
+        </address>
+      </div><!-- /contacto-info -->
+
+      <!-- ── Columna derecha: formulario ── -->
+      <div class="contacto-form-wrap fade-in-up" style="--card-delay: 150ms">
+        <h3 class="form-title">
+          <span class="lang-es">Envíanos un mensaje</span>
+          <span class="lang-en">Send us a message</span>
+        </h3>
+
+        <form class="contact-form" id="contact-form" aria-label="Formulario de contacto" novalidate>
+
+          <!-- Nombre -->
+          <div class="form-field form-field--full">
+            <label class="form-label" for="cf-nombre">
+              <span class="lang-es">Nombre completo</span>
+              <span class="lang-en">Full name</span>
+            </label>
+            <input class="form-input" type="text" id="cf-nombre" name="nombre" autocomplete="name" required>
+          </div>
+
+          <!-- Email -->
+          <div class="form-field">
+            <label class="form-label" for="cf-email">Email</label>
+            <input class="form-input" type="email" id="cf-email" name="email" autocomplete="email" required>
+          </div>
+
+          <!-- Tipo de evento -->
+          <div class="form-field">
+            <label class="form-label" for="cf-evento">
+              <span class="lang-es">Tipo de evento</span>
+              <span class="lang-en">Event type</span>
+            </label>
+            <select class="form-input form-select" id="cf-evento" name="evento">
+              <option value="" disabled selected>—</option>
+              <option value="serenata">Serenata</option>
+              <option value="boda">Boda</option>
+              <option value="corporativo">Evento corporativo</option>
+              <option value="celebracion">Celebración</option>
+              <option value="festival">Festival</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <!-- Fecha -->
+          <div class="form-field">
+            <label class="form-label" for="cf-fecha">
+              <span class="lang-es">Fecha del evento</span>
+              <span class="lang-en">Event date</span>
+            </label>
+            <input class="form-input" type="date" id="cf-fecha" name="fecha">
+          </div>
+
+          <!-- Ciudad -->
+          <div class="form-field">
+            <label class="form-label" for="cf-ciudad">
+              <span class="lang-es">Ciudad del evento</span>
+              <span class="lang-en">Event city</span>
+            </label>
+            <input class="form-input" type="text" id="cf-ciudad" name="ciudad" autocomplete="address-level2">
+          </div>
+
+          <!-- Mensaje -->
+          <div class="form-field form-field--full">
+            <label class="form-label" for="cf-mensaje">
+              <span class="lang-es">Mensaje</span>
+              <span class="lang-en">Message</span>
+            </label>
+            <textarea class="form-input form-textarea" id="cf-mensaje" name="mensaje" rows="4"></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-field form-field--full form-field--submit">
+            <button class="form-submit" type="submit">
+              <span class="lang-es">Enviar mensaje</span>
+              <span class="lang-en">Send message</span>
+            </button>
+          </div>
+
+        </form><!-- /contact-form -->
+
+        <!-- Confirmación: oculta hasta que JS la muestra tras el submit.
+             role="alert" hace que lectores de pantalla la anuncien automáticamente. -->
+        <div class="form-confirm" id="form-confirm" role="alert" aria-live="polite" hidden>
+          <span class="confirm-icon" aria-hidden="true">♪</span>
+          <p class="confirm-text">
+            <span class="lang-es">¡Gracias! Nos pondremos en contacto contigo pronto.</span>
+            <span class="lang-en">Thank you! We'll be in touch with you soon.</span>
+          </p>
+        </div>
+
+      </div><!-- /contacto-form-wrap -->
+
+    </div><!-- /contacto-grid -->
+
+  </section><!-- /contacto -->
+
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER — Trío Magia Blanca de Colombia
+       3 columnas: marca · navegación · contacto rápido
+  ══════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo" aria-label="Pie de página — Trío Magia Blanca de Colombia">
+
+    <div class="footer-inner">
+
+      <!-- Col 1: Marca -->
+      <div class="footer-brand">
+        <p class="footer-logo-text">Trío Magia Blanca</p>
+        <p class="footer-logo-sub">de Colombia</p>
+        <p class="footer-tagline">
+          <span class="lang-es">Boleros y música latina desde 1992</span>
+          <span class="lang-en">Boleros and Latin music since 1992</span>
+        </p>
+        <div class="footer-dots" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Col 2: Navegación rápida -->
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <h4 class="footer-col-title">
+          <span class="lang-es">Navegación</span>
+          <span class="lang-en">Navigation</span>
+        </h4>
+        <ul class="footer-nav-list">
+          <li><a href="#inicio" class="footer-link"><span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+          <li><a href="#historia" class="footer-link"><span class="lang-es">Historia</span><span class="lang-en">History</span></a></li>
+          <li><a href="#integrantes" class="footer-link"><span class="lang-es">Integrantes</span><span class="lang-en">Members</span></a></li>
+          <li><a href="#trayectoria" class="footer-link"><span class="lang-es">Trayectoria</span><span class="lang-en">Career</span></a></li>
+          <li><a href="#discografia" class="footer-link"><span class="lang-es">Discografía</span><span class="lang-en">Discography</span></a></li>
+          <li><a href="#videos" class="footer-link">Videos</a></li>
+          <li><a href="#contacto" class="footer-link"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- Col 3: Contacto rápido -->
+      <div class="footer-contact">
+        <h4 class="footer-col-title">
+          <span class="lang-es">Contacto</span>
+          <span class="lang-en">Contact</span>
+        </h4>
+        <ul class="footer-contact-list">
+          <li>
+            <a href="mailto:jorgebenavidesortega@hotmail.com" class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <polyline points="3,7 12,13 21,7"/>
+              </svg>
+              <span>jorgebenavidesortega@hotmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/573103399770" class="footer-contact-item" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.878-1.416A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.064-1.112l-.29-.175-3.006.873.84-3.07-.19-.305A8 8 0 1112 20z"/>
+              </svg>
+              <span>+57 310 339 9770</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Redes sociales en el footer -->
+        <div class="footer-socials">
+          <!-- ENLACE REAL: cambiar href="#" por la URL real de Facebook del trío -->
+          <a href="#" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/triomagiablanca?igsh=MXM2bTQ2NmdxMW5zeA==" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com/@triomagiablancadecolombia9019?si=Zs6Wc3toF9w1S8NS" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@triomagiblanca_1951?_r=1&amp;_t=ZS-9736sZyUWVY" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.79 1.54V6.78a4.84 4.84 0 01-1.02-.09z"/></svg>
+          </a>
+        </div>
+      </div><!-- /footer-contact -->
+
+    </div><!-- /footer-inner -->
+
+    <!-- Línea inferior del footer -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-line" aria-hidden="true"></div>
+      <div class="footer-bottom-inner">
+        <span class="footer-copy">© 2025 Trío Magia Blanca de Colombia. Todos los derechos reservados.</span>
+        <span class="footer-made">Diseñado con ♪ para la música</span>
+      </div>
+    </div>
+
+  </footer><!-- /site-footer -->
+
+  <!-- Botón flotante: volver arriba — visible al hacer scroll más de 400px -->
+  <button class="back-to-top" id="back-to-top" aria-label="Volver al inicio">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
